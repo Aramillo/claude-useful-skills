@@ -1,0 +1,9 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Salidas de auditorías y archivos temporales
+run-*/
+*.log
+.env
+.env.*
