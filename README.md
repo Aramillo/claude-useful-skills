@@ -1,19 +1,25 @@
 # mis-skills
 
-Mis skills de Claude Code, organizadas por categoría y respaldadas en la nube.
+Biblioteca de **referencias** a skills de Claude Code.
+
+- **Skills de terceros:** no se guardan copias. En `EXTERNAS.md` se registra solo la URL del repo, para qué la uso y el comando de instalación. Se instalan desde su origen, después de revisar su `SKILL.md`.
+- **Skills propias:** son las únicas que viven aquí, dentro de las carpetas de categorías.
+
+`CLAUDE.md` le explica a Claude Code cómo actuar cuando pido una skill: buscar la referencia en `EXTERNAS.md`, mostrarme el `SKILL.md` de origen y solo instalar tras mi confirmación.
 
 ## Estructura
 
 ```
 mis-skills/
-├── dev/             skills de desarrollo (Flutter, Spring Boot, etc.)
-├── seguridad/       auditorías y revisiones de seguridad
-├── entrevistas/     preparación técnica y discurso de proyectos
-├── _plantilla/      plantilla para crear una skill nueva
-└── EXTERNAS.md      skills de terceros (solo URL y versión, no copias)
+├── EXTERNAS.md      referencias a skills de terceros (URL, uso, instalación; nunca copias)
+├── CLAUDE.md        instrucciones para Claude Code sobre cómo usar este repo
+├── dev/             skills propias de desarrollo (Flutter, Spring Boot, etc.)
+├── seguridad/       skills propias de auditorías y revisiones de seguridad
+├── entrevistas/     skills propias de preparación técnica y discurso de proyectos
+└── _plantilla/      plantilla para crear una skill propia nueva
 ```
 
-Cada skill es una carpeta con un `SKILL.md` adentro.
+Las carpetas de categorías son solo para skills propias. Cada skill propia es una carpeta con un `SKILL.md` adentro.
 
 ## Índice de skills propias
 
@@ -21,7 +27,11 @@ Cada skill es una carpeta con un `SKILL.md` adentro.
 |-------|-----------|----------|--------|
 | _(aún ninguna)_ | | | |
 
-## Cómo usarlas
+## Instalar una skill de terceros
+
+Copiar el comando de la columna "Instalación" de `EXTERNAS.md`, después de revisar el `SKILL.md` en su repo de origen. O pedírselo a Claude Code en este repo ("instala la skill de seguridad").
+
+## Cómo usar las skills propias
 
 Claude Code busca las skills personales en `~/.claude/skills/<nombre>/SKILL.md` (una sola carpeta plana).
 
@@ -49,6 +59,6 @@ ln -s ~/mis-skills/dev/nombre-skill ~/.claude/skills/nombre-skill
 
 - Una skill nueva se crea copiando `_plantilla/nombre-de-la-skill`.
 - Nada de secretos en los `SKILL.md`: ni tokens, ni claves, ni datos de clientes.
-- Skills de terceros: no se copian aquí, se anotan en `EXTERNAS.md`.
+- Skills de terceros: no se copian aquí, se anotan en `EXTERNAS.md` (URL, uso, comando y fecha de registro).
 - Skills de un solo proyecto van en el repo del proyecto, en `.claude/skills/`.
 - Hacer commit cada vez que se ajuste una skill.
